@@ -1,6 +1,6 @@
 const { expect } = require('chai');
 describe('a test', ()=> {
-  it('can pass', ()=> {
+  it('true is equal to true', ()=> {
     expect(true).to.equal(true);
 
   });
