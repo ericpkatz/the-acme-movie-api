@@ -27,5 +27,13 @@ describe('/api routes', ()=> {
       expect(response.body.length).to.equal(4);
 
     });
+    it('allows cross origin requests', async()=> {
+      const response = await app.get('/api/movies');
+      console.log(response.headers);
+      expect(response.status).to.equal(200);
+      expect(response.headers['access-control-allow-origin']).to.be.ok;
+      expect(response.headers['access-control-allow-origin']).to.equal('*');
+
+    });
   });
 });
